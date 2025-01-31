@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #fff8f0, #f2e2e2); /* Soft background with a warm feel */
+  }
+  
+  .login-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ad5b5b; /* Your chosen color */
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #ad5b5b; /* Border color matches your chosen color */
+    box-shadow: 0 0 5px rgba(173, 91, 91, 0.5);
+  }
+  
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  .submit-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    background-color: #ad5b5b; /* Your chosen color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #933b3b; /* Darker shade on hover */
+  }
+  
+  .signup-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .signup-link a {
+    color: #ad5b5b; /* Matches the primary color */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 500px) {
+    .login-container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+  

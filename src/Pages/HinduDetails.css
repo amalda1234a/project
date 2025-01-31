@@ -1,0 +1,137 @@
+.dress-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.dress-image {
+  flex: 1;
+  max-width: 320px;
+}
+
+.dress-image img {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.side-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.side-image {
+  width: 22%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.side-image:hover {
+  border-color: #28a745;
+}
+
+.side-image img {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.dress-info {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dress-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.dress-info p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e63946;
+  margin-bottom: 15px;
+}
+
+.rent-now {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.rent-now:hover {
+  background-color: #218838;
+}
+
+.add-to-cart {
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 10px 20px;
+  background-color: #c0c73c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #e5e53f;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.size-selector,
+.rental-selector {
+  display: flex;
+  flex-direction: column;
+}
+
+.size-selector label,
+.rental-selector label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

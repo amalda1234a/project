@@ -1,0 +1,93 @@
+/* Page container styling */
+.bridal-wear-container {
+    padding: 20px;
+    
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    color: #ad5b5b;
+    margin-bottom: 20px;
+  }
+  
+  /* Grid layout for products */
+  .bridal-wear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Individual product card styling */
+  .bridal-wear-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: 500px;
+    max-width: 300px;
+    text-align: left;
+  }
+  
+  .bridal-wear-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image styling */
+  .bridal-wear-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+  }
+  
+  .bridal-wear-card:hover .bridal-wear-image {
+    opacity: 0.9;
+  }
+  
+  /* Product details styling */
+  .bridal-wear-details {
+    padding: 15px;
+  }
+  
+  .bridal-wear-name {
+    font-size: 1.125rem;
+    color: #b22222;
+    margin-bottom: 10px;
+  }
+  
+  .bridal-wear-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .bridal-wear-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  .back{
+    background-image: url('https://wevaphotography.com/wp-content/uploads/2022/02/Western-beach-wedding-decor.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+    /* margin-left: -52px; */
+    height: 690px;
+    /* width: 1257px; */
+    padding: 100px 20px;
+  }
+  .section-title {
+    font-size: 2rem;
+    color: #b22222;
+    margin-top: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
