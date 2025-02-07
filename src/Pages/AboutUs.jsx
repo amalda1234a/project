@@ -1,8 +1,12 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 import './AboutUs.css'; // Import the CSS for styling
+import Footer from '../Components/Footer';
 
 const AboutUs = () => {
   return (
+    <>
+    <Navbar />
     <div className="about-us-container">
       <h1>About Us</h1>
       <p>Welcome to your dream wedding planning website! We help brides-to-be prepare for their big day by offering personalized tips, advice, and inspiration.</p>
@@ -44,6 +48,8 @@ const AboutUs = () => {
         <p>&copy; 2025 Wedding Bridal Website. All rights reserved.</p>
       </footer>
     </div>
+    <Footer/>
+    </>
   );
 };
 

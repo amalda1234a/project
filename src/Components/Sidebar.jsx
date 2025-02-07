@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
+import { FaTachometerAlt, FaTruck, FaMoneyBill, FaBoxes, FaBell } from "react-icons/fa";
+import "./Sidebar.css";
 
-function Sidebar() {
+const Sidebar = () => {
   return (
-
     <div id="viewport">
   {/* Sidebar */}
   <div id="sidebar">
@@ -48,7 +49,7 @@ function Sidebar() {
     </ul>
   </div>
   {/* Content */}
-  <div id="content">
+  {/* <div id="content">
     <nav className="navbar navbar-default">
       <div className="container-fluid">
         <ul className="nav navbar-nav navbar-right">
@@ -70,10 +71,9 @@ function Sidebar() {
         <code>#content</code>.
       </p>
     </div>
-  </div>
+  </div> */}
 </div>
+);
+};
 
-  )
-}
-
-export default Sidebar
+export default Sidebar;

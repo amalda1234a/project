@@ -1,5 +1,7 @@
 import React from "react";
 import "./Blog.css";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 const blogs = [
   {
@@ -30,6 +32,8 @@ const blogs = [
 
 const BlogPage = () => {
   return (
+    <>
+    <Navbar/>
     <div className="blog-page">
       <h1 className="blog-header">Wedding Inspirations</h1>
       <p className="blog-subtext">Your go-to source for bridal fashion and wedding tips.</p>
@@ -48,6 +52,8 @@ const BlogPage = () => {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

@@ -1,11 +1,15 @@
 import React from "react";
 import { useCart } from "../Context/CartContext";
 import "./Cart.css";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, calculateTotal } = useCart();
 
   return (
+    <>
+    <Navbar/>
     <div className="cart-page">
       <h1>Your Cart</h1>
       {cartItems.length === 0 ? (
@@ -54,6 +58,8 @@ const Cart = () => {
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 

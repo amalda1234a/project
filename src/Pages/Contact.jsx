@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +22,8 @@ const ContactPage = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="contact-page">
       <div className="contact-container">
         <h1>Contact Us</h1>
@@ -60,6 +64,8 @@ const ContactPage = () => {
         </form>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

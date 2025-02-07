@@ -1,5 +1,7 @@
 import React from 'react';
 import './WeddingTips.css'; // Import CSS for styling
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const WeddingTips = () => {
   const tips = [
@@ -32,6 +34,7 @@ const WeddingTips = () => {
 
   return (
     <>
+    <Navbar/>
     <div className='main'>
     <div className="wedding-tips-container">
       <h1>Tips and Advice for Your Dream Wedding</h1>
@@ -45,6 +48,7 @@ const WeddingTips = () => {
       </div>
     </div>
     </div>
+    <Footer/>
     </>
   );
 };

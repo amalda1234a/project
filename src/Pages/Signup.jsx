@@ -1,75 +1,99 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Signup.css";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    uname: "", // 🔹 Changed from "username" to "uname" to match backend
     email: "",
     password: "",
   });
 
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // 🔹 Initialize navigate function
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.username || !formData.email || !formData.password) {
+    // Check if all fields are filled
+    if (!formData.uname || !formData.email || !formData.password) {
       setError("All fields are required!");
       return;
     }
 
-    // Store user details in localStorage
-    localStorage.setItem("user", JSON.stringify(formData));
+    // Password length validation
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
 
-    alert(`Welcome, ${formData.username}! Your account has been created.`);
-    
-    setFormData({ username: "", email: "", password: "" });
-    setError("");
+    try {
+      // Log the form data to check what is being sent
+      console.log("Form Data: ", formData);
 
-    navigate("/"); // 🔹 Redirect to homepage after signup
+      // Send data to backend
+      const response = await axios.post("http://localhost:5000/user", formData);
+
+      // If the signup is successful
+      alert(`Welcome, ${formData.uname}! Your account has been created.`);
+      
+      // Clear the form data and errors
+      setFormData({ uname: "", email: "", password: "" });
+      setError("");
+
+      // Redirect to login page after successful signup
+      navigate("/login"); 
+    } catch (error) {
+      console.error("Error response:", error.response);
+      // Set error message if signup fails
+      setError(error.response?.data?.message || "Signup failed!!");
+    }
   };
 
   return (
+    <>
+    <Navbar/>
+   
     <div className="signup-page">
       <div className="signup-container">
         <h1>Create an Account</h1>
         {error && <p className="error-message">{error}</p>}
         <form className="signup-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={formData.username}
-              onChange={handleChange}
-              required
+            <input 
+              type="text" 
+              name="uname" 
+              placeholder="Full Name" 
+              value={formData.uname} 
+              onChange={handleChange} 
+              required 
             />
           </div>
           <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Email Address" 
+              value={formData.email} 
+              onChange={handleChange} 
+              required 
             />
           </div>
           <div className="form-group">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
-              required
+            <input 
+              type="password" 
+              name="password" 
+              placeholder="Password" 
+              value={formData.password} 
+              onChange={handleChange} 
+              required 
             />
           </div>
           <button type="submit" className="submit-button">Sign Up</button>
@@ -80,6 +104,8 @@ const SignUpPage = () => {
         </form>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

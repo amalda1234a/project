@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";  // Import useNavigate
 import { useCart } from "../Context/CartContext"; // Import the CartContext
 import "./HinduDetails.css";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 // Dummy data for the bridal products
 const bridalWearProducts = [
@@ -121,6 +123,9 @@ const HinduDetails = () => {
   };
 
   return (
+    <>
+    <Navbar/>
+   
     <div className="dress-detail">
       <div className="dress-image">
         <img src={product.mainImage} alt="Main View" />
@@ -183,6 +188,8 @@ const HinduDetails = () => {
         <p>{product.description}</p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

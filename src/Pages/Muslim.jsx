@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Muslim.css';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
 
 const MuslimBridalWear = () => {
     const bridalWearProducts = [
@@ -105,19 +108,20 @@ const MuslimBridalWear = () => {
     ];
 
     return (
+        <>
+        <Navbar/>
+       
         <div className="bridal-wear-container">
             <h1 className="page-title">Muslim Bridal Wear Collection</h1>
-            <div className="back1">
-                {/* <h2 style={{ marginTop: '240px', color: '#b22222' }}> FOR THE BRIDE</h2> */}
-            </div>
-            <br />
-
+            
             {/* Bridal Wear Section */}
             <h2 className="section-title">Bridal Wear</h2>
             <div className="bridal-wear-grid">
                 {bridalWearProducts.map((product) => (
                     <div key={product.id} className="bridal-wear-card">
-                        <img src={product.image} alt={product.name} className="bridal-wear-image" />
+                        <Link to={`/muslim-details/${product.id}`}> {/* Link to details page */}
+                            <img src={product.image} alt={product.name} className="bridal-wear-image" />
+                        </Link>
                         <div className="bridal-wear-details">
                             <h2 className="bridal-wear-name">{product.name}</h2>
                             <p className="bridal-wear-price">{product.price}</p>
@@ -130,7 +134,6 @@ const MuslimBridalWear = () => {
 
             {/* Jewelry and Accessories Section */}
             <h2 className="section-title">Jewelry & Accessories</h2>
-            <br/>
             <div className="bridal-wear-grid">
                 {jewelryAndAccessories.map((item) => (
                     <div key={item.id} className="bridal-wear-card">
@@ -143,6 +146,8 @@ const MuslimBridalWear = () => {
                 ))}
             </div>
         </div>
+        <Footer/>
+        </>
     );
 };
 

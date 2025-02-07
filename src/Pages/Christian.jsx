@@ -1,5 +1,8 @@
 import React from 'react';
 import './Christian.css';
+import { Link } from 'react-router-dom';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
 
 const ChristianBridalWear = () => {
     const bridalWearProducts = [
@@ -17,7 +20,7 @@ const ChristianBridalWear = () => {
         },
         {
             id: 3,
-            name: 'bridal tissue saree with emblished 3Dwork',
+            name: 'Bridal tissue saree with embellished 3D work',
             price: 'Rs. 50,000.00',
             image: 'https://www.mohifashion.com/cdn/shop/files/5_27c76d50-be69-4a0b-a686-47a0d41bee8c.jpg?v=1730911954&width=360',
         },
@@ -29,7 +32,7 @@ const ChristianBridalWear = () => {
         },
         {
             id: 5,
-            name: 'Signature bridal hand embroidered lehanga for bride anila',
+            name: 'Signature bridal hand embroidered lehenga',
             price: 'Rs. 38,000.00',
             image: 'https://kavani.in/cdn/shop/files/22.png?v=1692334695&width=360',
         },
@@ -47,7 +50,7 @@ const ChristianBridalWear = () => {
         },
         {
             id: 8,
-            name: 'Signature bridal ball gown with lace and hand embroidery on silk fabric',
+            name: 'Signature bridal ball gown with lace and embroidery',
             price: 'Rs. 46,000.00',
             image: 'https://kavani.in/cdn/shop/files/11_dc5ce5d2-86f1-4ee2-ad59-b21b1f5de226.png?v=1707459096&width=360',
         },
@@ -105,32 +108,25 @@ const ChristianBridalWear = () => {
     ];
 
     return (
+        <>
+        <Navbar/>
         <div className="bridal-wear-container">
             <h1 className="page-title">Christian Bridal Wear Collection</h1>
-            <div className="back">
-                {/* <h2 style={{ marginTop: '240px', color: '#b22222' }}> FOR THE BRIDE</h2> */}
-            </div>
-            <br />
 
-            {/* Bridal Wear Section */}
             <h2 className="section-title">Bridal Wear</h2>
             <div className="bridal-wear-grid">
                 {bridalWearProducts.map((product) => (
-                    <div key={product.id} className="bridal-wear-card">
+                    <Link to={`/christian/${product.id}`} key={product.id} className="bridal-wear-card">
                         <img src={product.image} alt={product.name} className="bridal-wear-image" />
                         <div className="bridal-wear-details">
                             <h2 className="bridal-wear-name">{product.name}</h2>
                             <p className="bridal-wear-price">{product.price}</p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 
-            <br />
-
-            {/* Jewelry and Accessories Section */}
             <h2 className="section-title">Jewelry & Accessories</h2>
-            <br/>
             <div className="bridal-wear-grid">
                 {jewelryAndAccessories.map((item) => (
                     <div key={item.id} className="bridal-wear-card">
@@ -143,6 +139,8 @@ const ChristianBridalWear = () => {
                 ))}
             </div>
         </div>
+        <Footer/>
+        </>
     );
 };
 
